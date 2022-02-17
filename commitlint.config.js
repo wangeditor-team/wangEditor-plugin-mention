@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ["cz"],
+  extends: ['cz'],
   rules: {
-    "type-empty": [2, "never"],
+    'type-empty': [2, 'never'],
   },
-};
+}

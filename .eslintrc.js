@@ -23,9 +23,5 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'no-unused-vars': 0,
-    'prettier/prettier': [
-      'error',
-      { singleQuote: true, semi: false, parser: 'flow' },
-    ],
   },
 }

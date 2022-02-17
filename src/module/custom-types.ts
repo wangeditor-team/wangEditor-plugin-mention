@@ -3,7 +3,7 @@
  * @author wangfupeng
  */
 
- type EmptyText = {
+type EmptyText = {
   text: ''
 }
 export type MentionElement = {

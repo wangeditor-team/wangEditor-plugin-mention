@@ -3,13 +3,7 @@
  * @author wangfupeng
  */
 
-import {
-  IDomEditor,
-  createEditor,
-  createToolbar,
-  Boot,
-  IEditorConfig,
-} from '@wangeditor/editor'
+import { IDomEditor, createEditor, createToolbar, Boot, IEditorConfig } from '@wangeditor/editor'
 import module from '../src/index'
 
 Boot.registerModule(module)
@@ -19,7 +13,7 @@ interface IMentionConfig {
     triggerSymbol: string
     showModal: () => void
     hideModal: () => void
-  };
+  }
 }
 
 // 编辑器配置
@@ -52,7 +46,7 @@ const editorConfig: Partial<IEditorConfig & IMentionConfig> = {
       const modalElem = document.getElementById('mention-modal')
       if (modalElem == null) return
       modalElem.style.display = 'none'
-    }
+    },
   },
 }
 
