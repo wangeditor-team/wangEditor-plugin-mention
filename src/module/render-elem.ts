@@ -5,12 +5,15 @@
 
 import { h, VNode } from 'snabbdom'
 import { DomEditor, IDomEditor, SlateElement } from '@wangeditor/editor'
-import { MentionElement } from './custom-types'
+import { MentionElement } from '../custom-types'
 
 function renderMention(elem: SlateElement, children: VNode[] | null, editor: IDomEditor): VNode {
   // 当前节点是否选中
   const selected = DomEditor.isNodeSelected(editor, elem)
   const { value = '' } = elem as MentionElement
+
+  const { mentionConfig } = editor.getConfig()
+  const { triggerSymbol } = mentionConfig
 
   // 构建 vnode
   const vnode = h(
@@ -30,7 +33,7 @@ function renderMention(elem: SlateElement, children: VNode[] | null, editor: IDo
         padding: '0 3px',
       },
     },
-    `@${value}`
+    `${triggerSymbol}${value}` // 如 `@张三`
   )
 
   return vnode

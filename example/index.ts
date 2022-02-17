@@ -5,19 +5,13 @@
 
 import { IDomEditor, createEditor, createToolbar, Boot, IEditorConfig } from '@wangeditor/editor'
 import module from '../src/index'
+import { showModalElem, hideModalElem, bindInputEvent, bindModalEvent } from './init-dom'
 
+// 注册
 Boot.registerModule(module)
 
-interface IMentionConfig {
-  mentionConfig: {
-    triggerSymbol: string
-    showModal: () => void
-    hideModal: () => void
-  }
-}
-
 // 编辑器配置
-const editorConfig: Partial<IEditorConfig & IMentionConfig> = {
+const editorConfig: Partial<IEditorConfig> = {
   onChange(editor: IDomEditor) {
     const html = editor.getHtml()
     // @ts-ignore
@@ -28,25 +22,8 @@ const editorConfig: Partial<IEditorConfig & IMentionConfig> = {
   },
   mentionConfig: {
     triggerSymbol: '@',
-    showModal() {
-      // 获取光标位置
-      const domSelection = document.getSelection()
-      const domRange = domSelection?.getRangeAt(0)
-      if (domRange == null) return
-      const rect = domRange.getBoundingClientRect()
-
-      // 显示 modal
-      const modalElem = document.getElementById('mention-modal')
-      if (modalElem == null) return
-      modalElem.style.top = `${rect.top + 20}px`
-      modalElem.style.left = `${rect.left + 5}px`
-      modalElem.style.display = 'block'
-    },
-    hideModal() {
-      const modalElem = document.getElementById('mention-modal')
-      if (modalElem == null) return
-      modalElem.style.display = 'none'
-    },
+    showModal: showModalElem,
+    hideModal: hideModalElem,
   },
 }
 
@@ -83,26 +60,6 @@ window.editor = editor
 // @ts-ignore
 window.toolbar = toolbar
 
-// 绑定 mention modal 事件
-const modalElem = document.getElementById('mention-modal')
-if (modalElem) {
-  modalElem.addEventListener('click', (event: MouseEvent) => {
-    // @ts-ignore
-    if (event.target?.nodeName === 'LI') {
-      editor.restoreSelection()
-      // @ts-ignore
-      const text = event.target.textContent
-      if (text) {
-        editor.deleteBackward('character') // 删除 '@'
-        editor.insertNode({
-          // @ts-ignore
-          type: 'mention',
-          value: text,
-          info: { x: 1, y: 2 },
-          children: [{ text: '' }],
-        })
-        modalElem.style.display = 'none'
-      }
-    }
-  })
-}
+// 绑定 dom 事件
+bindInputEvent(editor)
+bindModalEvent(editor)

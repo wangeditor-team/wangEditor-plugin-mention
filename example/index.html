@@ -18,6 +18,12 @@
       position: absolute;
       border: 1px solid #ccc;
       background-color: #fff;
+      padding: 5px;
+    }
+
+    #mention-modal input {
+      width: 100px;
+      outline: none;
     }
 
     #mention-modal ul {
@@ -28,11 +34,13 @@
     #mention-modal ul li {
       list-style: none;
       cursor: pointer;
-      padding: 3px 10px;
+      padding: 3px 0;
+      text-align: left;
     }
 
     #mention-modal ul li:hover {
-      background-color: #f1f1f1;
+      /* background-color: #f1f1f1; */
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -55,10 +63,13 @@
   </div>
 
   <div id="mention-modal">
-    <ul>
-      <li>张三</li>
-      <li>李四</li>
-      <li>小明</li>
+    <input id="mention-input">
+    <ul id="mention-list">
+      <li>A张三</li>
+      <li>B李四</li>
+      <li>C小明</li>
+      <li>D小李</li>
+      <li>E小红</li>
     </ul>
   </div>
 </body>

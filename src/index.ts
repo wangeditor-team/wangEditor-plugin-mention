@@ -5,4 +5,6 @@
 
 import module from './module/index'
 
+export { MentionElement } from './custom-types'
+
 export default module

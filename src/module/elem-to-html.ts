@@ -4,7 +4,7 @@
  */
 
 import { SlateElement } from '@wangeditor/editor'
-import { MentionElement } from './custom-types'
+import { MentionElement } from '../custom-types'
 
 // 生成 html 的函数
 function mentionToHtml(elem: SlateElement, childrenHtml: string): string {
