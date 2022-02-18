@@ -40,14 +40,21 @@ function showModal(editor: IDomEditor) {
   // Show your modal, and set position
   // PS: You must implement the modal yourself, use <div> or Vue React component
 
+
   // Insert mention node when emit some event.
-  const mentionNode: MentionElement = {
-    type: 'mention', // must be 'mention'
-    value: 'James', // text
-    info: { x: 1, y: 2 }, // extended info
-    children: [{ text: '' }], // must have an empty text node in children
+  function insertMention() {
+    const mentionNode: MentionElement = {
+      type: 'mention', // must be 'mention'
+      value: 'James', // text
+      info: { x: 1, y: 2 }, // extended info
+      children: [{ text: '' }], // must have an empty text node in children
+    }
+
+    editor.restoreSelection()
+    editor.deleteBackward('character') // delete '@'
+    editor.insertNode(mentionNode)
+    editor.move(1) // move curser
   }
-  editor.insertNode(mentionNode)
 }
 
 // hide your modal

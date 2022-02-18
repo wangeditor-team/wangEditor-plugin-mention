@@ -39,14 +39,21 @@ function showModal(editor: IDomEditor) {
   // 显示 modal 弹框，并定位
   // PS：modal 需要自定义，如 <div> 或 Vue React 组件
 
+
   // 当触发某事件（如点击一个按钮）时，插入 mention 节点
-  const mentionNode: MentionElement = {
+  function insertMention() {
+    const mentionNode: MentionElement = {
       type: 'mention', // 必须是 'mention'
       value: '张三', // 文本
       info: { x: 1, y: 2 }, // 其他信息，自定义
       children: [{ text: '' }], // 必须有一个空 text 作为 children
     }
-  editor.insertNode(mentionNode)
+
+    editor.restoreSelection() // 恢复选区
+    editor.deleteBackward('character') // 删除 '@'
+    editor.insertNode(mentionNode) // 插入 mention
+    editor.move(1) // 移动光标
+  }
 }
 
 // 隐藏弹框
