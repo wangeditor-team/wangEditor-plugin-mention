@@ -20,10 +20,12 @@ const editorConfig: Partial<IEditorConfig> = {
     // @ts-ignore
     document.getElementById('text-json').value = contentStr
   },
-  mentionConfig: {
-    triggerSymbol: '@',
-    showModal: showModalElem,
-    hideModal: hideModalElem,
+  EXTEND_CONF: {
+    mentionConfig: {
+      triggerSymbol: '@',
+      showModal: showModalElem,
+      hideModal: hideModalElem,
+    },
   },
 }
 

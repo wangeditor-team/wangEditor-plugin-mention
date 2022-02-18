@@ -10,8 +10,10 @@ import { MentionElement } from '../../src/index'
 describe('mention render-elem', () => {
   const editor = createEditor({
     config: {
-      mentionConfig: {
-        triggerSymbol: '@',
+      EXTEND_CONF: {
+        mentionConfig: {
+          triggerSymbol: '@',
+        },
       },
     },
   })

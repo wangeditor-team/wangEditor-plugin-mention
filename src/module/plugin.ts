@@ -4,6 +4,13 @@
  */
 
 import { DomEditor, IDomEditor } from '@wangeditor/editor'
+import { IExtendConfig } from './interface'
+
+function getMentionConfig(editor: IDomEditor) {
+  const { EXTEND_CONF } = editor.getConfig()
+  const { mentionConfig } = EXTEND_CONF as IExtendConfig
+  return mentionConfig
+}
 
 function withMention<T extends IDomEditor>(editor: T) {
   const { insertText, isInline, isVoid } = editor
@@ -19,8 +26,8 @@ function withMention<T extends IDomEditor>(editor: T) {
       return
     }
 
-    const { mentionConfig } = newEditor.getConfig()
-    const { triggerSymbol, showModal, hideModal } = mentionConfig
+    // mention 相关配置
+    const { triggerSymbol, showModal, hideModal } = getMentionConfig(newEditor)
 
     if (t === triggerSymbol) {
       setTimeout(() => {
@@ -30,7 +37,6 @@ function withMention<T extends IDomEditor>(editor: T) {
         // 监听，隐藏 modal（异步，等待 modal 渲染后再监听）
         setTimeout(() => {
           function _hide() {
-            console.log('try hide modal...')
             if (hideModal) hideModal()
           }
           newEditor.once('fullScreen', _hide)

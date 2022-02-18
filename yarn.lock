@@ -1894,10 +1894,10 @@
   dependencies:
     prismjs "^1.23.0"
 
-"@wangeditor/core@^0.14.7":
-  version "0.14.7"
-  resolved "https://registry.npmmirror.com/@wangeditor/core/-/core-0.14.7.tgz#6e9fac8d04cfbd48a5447523ac2720cea4ab5196"
-  integrity sha512-14VivAQQvD73xR0T6DsxY4WiGABIpQoEVTEEMZhqc8FQBtsjmMi+HrKAtEQaAm67jMtEShANAvRKr0QuC/Vu+g==
+"@wangeditor/core@^0.14.8":
+  version "0.14.8"
+  resolved "https://registry.npmmirror.com/@wangeditor/core/-/core-0.14.8.tgz#56f87fee14389578c0b340f6764734c1cd90ed72"
+  integrity sha512-3jeylaGvHj4uonx6in30emQKyDTFwFaTiJmQ9SR5ohA4RuMmRwVbWAWAK+e6+kmSJhxuip3Yg1T8QTZBVPxUhg==
   dependencies:
     event-emitter "^0.3.5"
     html-void-elements "^2.0.0"
@@ -1905,16 +1905,16 @@
     scroll-into-view-if-needed "^2.2.28"
     slate-history "^0.66.0"
 
-"@wangeditor/editor@^0.15.6":
-  version "0.15.6"
-  resolved "https://registry.npmmirror.com/@wangeditor/editor/-/editor-0.15.6.tgz#266dbb5ad678ea952195e47c526028d26fb377c5"
-  integrity sha512-cFgHeke6vgC1Yv8RqqHbJ7KuNpfVbHzP4JiKj+Q2wwXj4FBk/66X96+n69ANitCUZu4KezSq41Z1wJPkO84G4A==
+"@wangeditor/editor@^0.15.7":
+  version "0.15.7"
+  resolved "https://registry.npmmirror.com/@wangeditor/editor/-/editor-0.15.7.tgz#773bd79f74f2f0ca557202133334ad40288bfd0f"
+  integrity sha512-Bj97BGTgqPOLel/kQBeiHGTerDG2rQrfMBzFsc9uuk0HMDF2l8oGyAXNs7BCbIPT67GKepfLGPDMQuR72NIU4g==
   dependencies:
     "@uppy/core" "^2.1.1"
     "@uppy/xhr-upload" "^2.0.3"
     "@wangeditor/basic-modules" "^0.11.5"
     "@wangeditor/code-highlight" "^0.9.4"
-    "@wangeditor/core" "^0.14.7"
+    "@wangeditor/core" "^0.14.8"
     "@wangeditor/list-module" "^0.9.3"
     "@wangeditor/table-module" "^0.10.5"
     "@wangeditor/upload-image-module" "^0.8.3"

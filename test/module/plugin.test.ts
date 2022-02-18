@@ -13,10 +13,12 @@ describe('mention plugin', () => {
   const editor = withMention(
     createEditor({
       config: {
-        mentionConfig: {
-          triggerSymbol: '@',
-          showModal,
-          hideModal,
+        EXTEND_CONF: {
+          mentionConfig: {
+            triggerSymbol: '@',
+            showModal,
+            hideModal,
+          },
         },
       },
     })

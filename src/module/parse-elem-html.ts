@@ -5,7 +5,7 @@
 
 import { DOMElement } from '../utils/dom'
 import { IDomEditor, SlateDescendant, SlateElement } from '@wangeditor/editor'
-import { MentionElement } from '../custom-types'
+import { MentionElement } from './custom-types'
 
 function parseHtml(
   elem: DOMElement,
