@@ -1,5 +1,5 @@
 /**
- * @description formula plugin
+ * @description mention plugin
  * @author wangfupeng
  */
 
