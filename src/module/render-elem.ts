@@ -6,15 +6,11 @@
 import { h, VNode } from 'snabbdom'
 import { DomEditor, IDomEditor, SlateElement } from '@wangeditor/editor'
 import { MentionElement } from './custom-types'
-import { IExtendConfig } from './interface'
 
 function renderMention(elem: SlateElement, children: VNode[] | null, editor: IDomEditor): VNode {
   // 当前节点是否选中
   const selected = DomEditor.isNodeSelected(editor, elem)
   const { value = '' } = elem as MentionElement
-
-  const { mentionConfig } = editor.getConfig().EXTEND_CONF as IExtendConfig
-  const { triggerSymbol } = mentionConfig
 
   // 构建 vnode
   const vnode = h(
@@ -34,7 +30,7 @@ function renderMention(elem: SlateElement, children: VNode[] | null, editor: IDo
         padding: '0 3px',
       },
     },
-    `${triggerSymbol}${value}` // 如 `@张三`
+    `@${value}` // 如 `@张三`
   )
 
   return vnode

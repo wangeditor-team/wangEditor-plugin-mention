@@ -15,14 +15,15 @@ describe('parse elem html', () => {
   })
 
   it('parse html', () => {
-    // elem-to-html 产出格式 `<span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-info="${infoStr}">${value}</span>`
+    // elem-to-html 产出格式 `<span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-value="张三" data-info="xxx">@张三</span>`
     const value = '张三'
     const info = { x: 10 }
     const infoStr = encodeURIComponent(JSON.stringify(info))
     const elem = document.createElement('span')
     elem.setAttribute('data-w-e-type', 'mention')
+    elem.setAttribute('data-value', value)
     elem.setAttribute('data-info', infoStr)
-    elem.innerHTML = value
+    elem.innerHTML = `@{value}`
 
     const mention = parseHtmlConf.parseElemHtml(elem, [], editor) as MentionElement
     expect(mention.type).toBe('mention')

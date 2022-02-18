@@ -15,7 +15,6 @@ describe('mention plugin', () => {
       config: {
         EXTEND_CONF: {
           mentionConfig: {
-            triggerSymbol: '@',
             showModal,
             hideModal,
           },

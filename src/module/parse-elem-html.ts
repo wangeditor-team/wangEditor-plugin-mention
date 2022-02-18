@@ -12,9 +12,9 @@ function parseHtml(
   children: SlateDescendant[],
   editor: IDomEditor
 ): SlateElement {
-  // elem HTML 结构 <span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-info="${infoStr}">${value}</span>
+  // elem HTML 结构 <span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-value="张三" data-info="xxx">@张三</span>
 
-  const value = elem.textContent || ''
+  const value = elem.getAttribute('data-value') || ''
   const rawInfo = decodeURIComponent(elem.getAttribute('data-info') || '')
   let info: any
   try {

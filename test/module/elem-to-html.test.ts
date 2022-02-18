@@ -24,7 +24,7 @@ describe('mention elem-to-html', () => {
     const html = elemToHtmlConf.elemToHtml(mentionElem, '')
     const infoStr = encodeURIComponent(JSON.stringify(info))
     expect(html).toBe(
-      `<span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-info="${infoStr}">${value}</span>`
+      `<span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-value="${value}" data-info="${infoStr}">@${value}</span>`
     )
   })
 })

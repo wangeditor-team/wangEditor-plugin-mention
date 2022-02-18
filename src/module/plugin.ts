@@ -27,17 +27,17 @@ function withMention<T extends IDomEditor>(editor: T) {
     }
 
     // mention 相关配置
-    const { triggerSymbol, showModal, hideModal } = getMentionConfig(newEditor)
+    const { showModal, hideModal } = getMentionConfig(newEditor)
 
-    if (t === triggerSymbol) {
+    if (t === '@') {
       setTimeout(() => {
         // 展示 modal （异步，以便准确获取光标位置）
-        if (showModal) showModal()
+        if (showModal) showModal(newEditor)
 
         // 监听，隐藏 modal（异步，等待 modal 渲染后再监听）
         setTimeout(() => {
           function _hide() {
-            if (hideModal) hideModal()
+            if (hideModal) hideModal(newEditor)
           }
           newEditor.once('fullScreen', _hide)
           newEditor.once('unFullScreen', _hide)

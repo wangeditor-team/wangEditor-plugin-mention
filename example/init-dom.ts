@@ -9,7 +9,7 @@ import { MentionElement } from '../src/index'
 /**
  * 显示 modal elem
  */
-export function showModalElem() {
+export function showModalElem(editor: IDomEditor) {
   // 获取光标位置
   const domSelection = document.getSelection()
   const domRange = domSelection?.getRangeAt(0)
@@ -31,7 +31,7 @@ export function showModalElem() {
 /**
  * 隐藏 modal elem
  */
-export function hideModalElem() {
+export function hideModalElem(editor: IDomEditor) {
   const modalElem = document.getElementById('mention-modal')
   if (modalElem == null) return
   modalElem.style.display = 'none'
@@ -137,7 +137,7 @@ export function bindInputEvent(editor: IDomEditor) {
   // esc ，退出
   inputElem.addEventListener('keyup', event => {
     if (event.key === 'Escape') {
-      hideModalElem()
+      hideModalElem(editor)
       editor.restoreSelection()
     }
   })

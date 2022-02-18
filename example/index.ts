@@ -4,7 +4,7 @@
  */
 
 import { IDomEditor, createEditor, createToolbar, Boot, IEditorConfig } from '@wangeditor/editor'
-import module from '../src/index'
+import module, { MentionElement } from '../src/index'
 import { showModalElem, hideModalElem, bindInputEvent, bindModalEvent } from './init-dom'
 
 // 注册
@@ -22,7 +22,6 @@ const editorConfig: Partial<IEditorConfig> = {
   },
   EXTEND_CONF: {
     mentionConfig: {
-      triggerSymbol: '@',
       showModal: showModalElem,
       hideModal: hideModalElem,
     },
@@ -33,23 +32,23 @@ const editorConfig: Partial<IEditorConfig> = {
 const editor = createEditor({
   selector: '#editor-container',
   config: editorConfig,
-  // content: [
-  //   {
-  //     // @ts-ignore
-  //     type: 'paragraph',
-  //     children: [
-  //       { text: 'hello world' },
-  //       {
-  //         // @ts-ignore
-  //         type: 'mention',
-  //         value: '张三',
-  //         info: { x: 100 },
-  //         children: [{ text: '' }],
-  //       },
-  //     ],
-  //   },
-  // ],
-  html: `<p>hello&nbsp;world<span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-info="%7B%22x%22%3A10%7D">小明</span></p><p><br></p>`,
+  content: [
+    {
+      // @ts-ignore
+      type: 'paragraph',
+      children: [
+        { text: 'hello world' },
+        {
+          // @ts-ignore
+          type: 'mention',
+          value: '张三',
+          info: { x: 100 },
+          children: [{ text: '' }],
+        },
+      ],
+    },
+  ],
+  // html: `<p>hello&nbsp;world<span data-w-e-type="mention" data-w-e-is-void data-w-e-is-inline data-value="小明" data-info="%7B%22x%22%3A10%7D">@小明</span></p><p><br></p>`,
 })
 const toolbar = createToolbar({
   editor,

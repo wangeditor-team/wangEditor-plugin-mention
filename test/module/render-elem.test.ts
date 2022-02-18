@@ -8,15 +8,7 @@ import renderElemConf from '../../src/module/render-elem'
 import { MentionElement } from '../../src/index'
 
 describe('mention render-elem', () => {
-  const editor = createEditor({
-    config: {
-      EXTEND_CONF: {
-        mentionConfig: {
-          triggerSymbol: '@',
-        },
-      },
-    },
-  })
+  const editor = createEditor()
 
   const mentionElem: MentionElement = {
     type: 'mention',

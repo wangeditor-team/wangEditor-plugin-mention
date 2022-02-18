@@ -3,10 +3,11 @@
  * @author wangfupeng
  */
 
+import { IDomEditor } from '@wangeditor/editor'
+
 export interface IExtendConfig {
   mentionConfig: {
-    triggerSymbol: string
-    showModal: () => void
-    hideModal: () => void
+    showModal: (editor: IDomEditor) => void
+    hideModal: (editor: IDomEditor) => void
   }
 }
