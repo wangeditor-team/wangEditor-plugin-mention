@@ -16,6 +16,8 @@ yarn add @wangeditor/plugin-mention
 
 ## 使用
 
+[Vue 示例源码](https://github.com/wangfupeng1988/vue2-wangeditor-demo/blob/master/src/components/MyEditorWithMention.vue)
+
 ### 注册到编辑器
 
 ```ts

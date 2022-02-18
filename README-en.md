@@ -16,6 +16,8 @@ yarn add @wangeditor/plugin-mention
 
 ## Usage
 
+[Vue demo source code](https://github.com/wangfupeng1988/vue2-wangeditor-demo/blob/master/src/components/MyEditorWithMention.vue)
+
 ### Use in editor
 
 ```ts
