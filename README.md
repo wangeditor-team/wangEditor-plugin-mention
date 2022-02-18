@@ -1,10 +1,10 @@
-# wangEditor `@xxx` 插件
+# wangEditor mention 插件
 
 [English Documentation](./README-en.md)
 
 ## 介绍
 
-[wangEditor](https://www.wangeditor.com/v5/) `@xxx` 插件。
+[wangEditor](https://www.wangeditor.com/v5/) mention 插件，如 `@张三`。
 
 ![](./_img/demo.png)
 

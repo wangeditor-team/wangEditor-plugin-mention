@@ -1,10 +1,10 @@
-# wangEditor `@xxx` mention module
+# wangEditor mention plugin
 
 [中文文档](./README.md)
 
 ## Introduction
 
-[wangEditor](https://www.wangeditor.com/v5/) `@xxx` mention plugin.
+[wangEditor](https://www.wangeditor.com/v5/) mention plugin, like `@James`.
 
 ![](./_img/demo.png)
 
