@@ -3,7 +3,7 @@
  * @author wangfupeng
  */
 
-import { IModuleConf } from '@wangeditor/core'
+import { IModuleConf } from '@wangeditor/editor'
 import withMention from './plugin'
 import renderElemConf from './render-elem'
 import elemToHtmlConf from './elem-to-html'
