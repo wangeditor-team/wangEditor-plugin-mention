@@ -4,7 +4,7 @@
 
 ## 介绍
 
-[wangEditor](https://www.wangeditor.com/v5/) mention 插件，如 `@张三`。
+[wangEditor](https://www.wangeditor.com/) mention 插件，如 `@张三`。
 
 ![](./_img/demo.png)
 

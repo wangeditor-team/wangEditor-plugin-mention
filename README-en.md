@@ -4,7 +4,7 @@
 
 ## Introduction
 
-[wangEditor](https://www.wangeditor.com/v5/) mention plugin, like `@James`.
+[wangEditor](https://www.wangeditor.com/en/) mention plugin, like `@James`.
 
 ![](./_img/demo.png)
 
